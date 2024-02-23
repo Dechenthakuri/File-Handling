@@ -1,0 +1,29 @@
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main(int argc, char* argv[]) { 
+    
+    ifstream inFile(argv[1]);  
+    ofstream outFile(argv[2]); 
+    int count = 0;
+
+    int data;
+    while (inFile >> data) {
+        outFile << data << endl;
+        count++;  
+    }
+
+    outFile << "The number of integers in the input file is " << count << endl;
+
+    inFile.close();
+    outFile.close();
+
+    return 0;
+}
+
+
+
+
